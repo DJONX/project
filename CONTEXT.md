@@ -19,12 +19,12 @@ Hosting assumption: Vercel for the Next.js apps, Supabase cloud for the backend.
 Package manager: pnpm.
 Testing: Vitest for unit tests, Playwright for the critical end-to-end flow only (product view → WhatsApp click). Do not build exhaustive E2E coverage — this is a lean startup, not an enterprise codebase.
 Monorepo layout:
-  /apps/storefront      -> renders any merchant's store from their config
-  /apps/marketplace     -> the central aggregator site
-  /apps/staff-console   -> internal tool, auth-gated, not indexed by search engines
-  /packages/config-schema -> the Zod schema + types every app imports (single source of truth)
-  /packages/templates   -> the sector templates (see 0.5), pure presentational components
-  /packages/ui          -> shared primitives ONLY where sharing doesn't erase template identity
+/apps/storefront -> renders any merchant's store from their config
+/apps/marketplace -> the central aggregator site
+/apps/staff-console -> internal tool, auth-gated, not indexed by search engines
+/packages/config-schema -> the Zod schema + types every app imports (single source of truth)
+/packages/templates -> the sector templates (see 0.5), pure presentational components
+/packages/ui -> shared primitives ONLY where sharing doesn't erase template identity
 0.4 The core architectural rule: config-driven templates
 
 This is the single most important technical decision in the whole project, and it must not be violated by any task: a merchant is data, not code.
