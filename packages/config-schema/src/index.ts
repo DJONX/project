@@ -195,33 +195,47 @@ export const ColorPaletteSchema = z.object({
 });
 
 // Merchant Config Schema
-export const MerchantConfigSchema = z.object({
-  id: z
-    .string({ required_error: "L'identifiant du marchand est requis" })
-    .uuid({ message: "L'identifiant du marchand doit être un UUID valide" }),
-  slug: SlugSchema,
-  businessName: z
-    .string({ required_error: "Le nom de l'entreprise est requis" })
-    .min(1, "Le nom de l'entreprise est requis"),
-  sector: SectorSchema,
-  whatsappNumber: WhatsAppNumberSchema,
-  logoUrl: z
-    .string({ required_error: "Le format du logo doit être une URL valide" })
-    .url("Le format du logo doit être une URL valide"),
-  colorPalette: ColorPaletteSchema,
-  tagline: z.string({ required_error: "Le slogan est requis" }).min(1, "Le slogan est requis"),
-  aboutText: z
-    .string({ required_error: "Le texte de description (À propos) est requis" })
-    .min(1, "Le texte de description (À propos) est requis"),
-  socialLinks: z.array(SocialLinkSchema).optional(),
-  verifiedBadge: z.boolean().default(false),
-  isActive: z.boolean().default(true),
-  createdAt: z.union([z.date(), z.string()], { required_error: "La date de création est requise" }),
-  updatedAt: z.union([z.date(), z.string()], {
-    required_error: "La date de mise à jour est requise",
-  }),
-  products: z.array(ProductSchema),
-});
+export const MerchantConfigSchema = z
+  .object({
+    id: z
+      .string({ required_error: "L'identifiant du marchand est requis" })
+      .uuid({ message: "L'identifiant du marchand doit être un UUID valide" }),
+    slug: SlugSchema,
+    businessName: z
+      .string({ required_error: "Le nom de l'entreprise est requis" })
+      .min(1, "Le nom de l'entreprise est requis"),
+    sector: SectorSchema,
+    whatsappNumber: WhatsAppNumberSchema,
+    logoUrl: z
+      .string({ required_error: "Le format du logo doit être une URL valide" })
+      .url("Le format du logo doit être une URL valide"),
+    colorPalette: ColorPaletteSchema,
+    tagline: z.string({ required_error: "Le slogan est requis" }).min(1, "Le slogan est requis"),
+    aboutText: z
+      .string({ required_error: "Le texte de description (À propos) est requis" })
+      .min(1, "Le texte de description (À propos) est requis"),
+    socialLinks: z.array(SocialLinkSchema).optional(),
+    verifiedBadge: z.boolean().default(false),
+    isActive: z.boolean().default(true),
+    createdAt: z.union([z.date(), z.string()], {
+      required_error: "La date de création est requise",
+    }),
+    updatedAt: z.union([z.date(), z.string()], {
+      required_error: "La date de mise à jour est requise",
+    }),
+    products: z.array(ProductSchema),
+  })
+  .superRefine((val, ctx) => {
+    val.products.forEach((product, index) => {
+      if (product.sectorSpecificFields.sector !== val.sector) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: `Le secteur du produit '${product.name}' (${product.sectorSpecificFields.sector}) ne correspond pas au secteur du marchand (${val.sector})`,
+          path: ["products", index, "sectorSpecificFields", "sector"],
+        });
+      }
+    });
+  });
 
 export type MerchantConfig = z.infer<typeof MerchantConfigSchema>;
 

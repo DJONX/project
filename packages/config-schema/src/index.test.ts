@@ -213,6 +213,24 @@ describe("MerchantConfigSchema", () => {
       expect(idError?.message).toBe("L'identifiant du produit doit être un UUID valide");
     }
   });
+
+  it("should fail when a product's sectorSpecificFields sector does not match the merchant's sector", () => {
+    const invalidConfig = createValidConfig();
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+    (invalidConfig.products[0] as any).sectorSpecificFields = {
+      sector: "Restaurant / food",
+      spiceLevel: "hot",
+    };
+
+    const result = MerchantConfigSchema.safeParse(invalidConfig);
+    expect(result.success).toBe(false);
+    if (!result.success) {
+      const sectorError = result.error.errors.find(
+        (e) => e.path.join(".") === "products.0.sectorSpecificFields.sector"
+      );
+      expect(sectorError?.message).toContain("ne correspond pas au secteur du marchand");
+    }
+  });
 });
 
 describe("SectorSpecificFieldsSchema", () => {
