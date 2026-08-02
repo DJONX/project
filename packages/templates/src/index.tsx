@@ -162,7 +162,7 @@ export const BoutiqueTemplate: React.FC<TemplateProps> = ({ config }) => {
                       }}
                     />
                     {!product.inStock && (
-                      <span className="absolute top-2 right-2 bg-red-600 text-white text-xxs font-bold px-2 py-0.5 rounded-full uppercase">
+                      <span className="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold px-2 py-0.5 rounded-full uppercase">
                         Rupture
                       </span>
                     )}
@@ -170,7 +170,7 @@ export const BoutiqueTemplate: React.FC<TemplateProps> = ({ config }) => {
                   {/* Card text details */}
                   <div className="p-3 flex-1 flex flex-col justify-between">
                     <div>
-                      <span className="text-xxs font-semibold uppercase text-gray-400 tracking-wider">
+                      <span className="text-xs font-semibold uppercase text-gray-400 tracking-wider">
                         {product.category}
                       </span>
                       <h3 className="font-bold text-sm text-gray-900 line-clamp-1 mt-0.5">
@@ -265,7 +265,7 @@ export const BoutiqueTemplate: React.FC<TemplateProps> = ({ config }) => {
                     <button
                       key={url + idx}
                       onClick={() => setActivePhotoIndex(idx)}
-                      className={`w-12 h-15 rounded-lg overflow-hidden border-2 transition-all flex-shrink-0 ${
+                      className={`w-12 h-16 rounded-lg overflow-hidden border-2 transition-all flex-shrink-0 ${
                         activeImageIndex === idx
                           ? "border-[var(--color-primary)] scale-105"
                           : "border-transparent opacity-75"
