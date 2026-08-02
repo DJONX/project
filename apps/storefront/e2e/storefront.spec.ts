@@ -96,7 +96,8 @@ test.describe("Storefront E2E Critical Path — All Ten Sectors", () => {
       await expect(businessTitle.first()).toBeVisible();
 
       if (merchant.verified) {
-        const verifiedBadge = page.locator("text=Vérifié")
+        const verifiedBadge = page
+          .locator("text=Vérifié")
           .or(page.locator("text=Vendeur vérifié"))
           .or(page.locator("text=Garantie certifiée"))
           .or(page.locator("text=Artisan d'Afrique"))
@@ -121,7 +122,8 @@ test.describe("Storefront E2E Critical Path — All Ten Sectors", () => {
       await productCard.first().click();
 
       // Trigger order button (depending on whether it is custom or standard CTA)
-      const orderBtn = page.locator("text=Commander")
+      const orderBtn = page
+        .locator("text=Commander")
         .or(page.locator("text=S'inscrire"))
         .or(page.locator("text=Réserver ou Visiter"));
       await expect(orderBtn.first()).toBeVisible();
@@ -144,7 +146,9 @@ test.describe("Storefront E2E Critical Path — All Ten Sectors", () => {
     });
   }
 
-  test("should render 404 boutique introuvable page for invalid merchant slug", async ({ page }) => {
+  test("should render 404 boutique introuvable page for invalid merchant slug", async ({
+    page,
+  }) => {
     await page.goto("/non-existent-shop");
 
     const errorHeading = page.locator("h1");
@@ -159,5 +163,24 @@ test.describe("Storefront E2E Critical Path — All Ten Sectors", () => {
 
     const errorHeading = page.locator("h1");
     await expect(errorHeading).toContainText("Boutique introuvable");
+  });
+
+  test("should render all 50+ products on supermarket page correctly without error", async ({
+    page,
+  }) => {
+    // Go to supermarket express storefront
+    await page.goto("/supermarket-express");
+
+    // Verify the business title
+    const title = page.locator("text=Express Alimentation");
+    await expect(title.first()).toBeVisible();
+
+    // Verify that at least 50 product items are visible
+    // Each product has a card. Let's count elements with the text "Produit Épicerie #"
+    const productCardsCount = await page.locator("h3:has-text('Produit Épicerie #')").count();
+    expect(productCardsCount).toBeGreaterThanOrEqual(50);
+    console.log(
+      `Successfully verified ${productCardsCount} supermarket products rendered on page!`
+    );
   });
 });

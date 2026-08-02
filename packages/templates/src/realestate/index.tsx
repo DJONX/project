@@ -84,7 +84,7 @@ export const RealEstateTemplate: React.FC<TemplateProps> = ({ config }) => {
                       src={product.photoUrls?.[0]}
                       alt={product.name}
                       loading="lazy"
-                      className="w-full h-full object-cover transition-transform hover:scale-102 duration-300"
+                      className="w-full h-full object-cover transition-transform hover:scale-105 duration-300"
                       onError={(e) => {
                         (e.target as HTMLImageElement).src =
                           "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=500";

@@ -91,13 +91,13 @@ export const ElectronicsTemplate: React.FC<TemplateProps> = ({ config }) => {
                         }}
                       />
                       {isElec && rf.warrantyMonths && (
-                        <span className="absolute bottom-2 right-2 bg-slate-950/80 backdrop-blur text-xxs font-bold text-slate-300 px-2 py-0.5 rounded">
+                        <span className="absolute bottom-2 right-2 bg-slate-950/80 backdrop-blur text-xs font-bold text-slate-300 px-2 py-0.5 rounded">
                           🛡️ {rf.warrantyMonths} mois de garantie
                         </span>
                       )}
                     </div>
                     <div>
-                      <span className="text-xxs uppercase tracking-wider font-extrabold text-[var(--color-primary)]">
+                      <span className="text-xs uppercase tracking-wider font-extrabold text-[var(--color-primary)]">
                         {product.category}
                       </span>
                       <h3 className="font-extrabold text-white text-base mt-1 line-clamp-1">
@@ -126,7 +126,8 @@ export const ElectronicsTemplate: React.FC<TemplateProps> = ({ config }) => {
                             .slice(0, 2)
                             .map(([key, val]) => (
                               <div key={key}>
-                                <span className="text-slate-500 font-bold uppercase">{key}:</span> {val}
+                                <span className="text-slate-500 font-bold uppercase">{key}:</span>{" "}
+                                {val}
                               </div>
                             ))}
                       </div>

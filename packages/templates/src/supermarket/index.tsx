@@ -53,7 +53,7 @@ export const SupermarketTemplate: React.FC<TemplateProps> = ({ config }) => {
                   🛒 {config.businessName}
                 </span>
                 {config.verifiedBadge && (
-                  <span className="inline-flex items-center px-1.5 py-0.5 rounded text-xxs font-bold text-white bg-[var(--color-primary)]">
+                  <span className="inline-flex items-center px-1.5 py-0.5 rounded text-xs font-bold text-white bg-[var(--color-primary)]">
                     Vérifié
                   </span>
                 )}
@@ -62,7 +62,7 @@ export const SupermarketTemplate: React.FC<TemplateProps> = ({ config }) => {
             </div>
           </div>
           {config.aboutText && (
-            <p className="text-xxs text-slate-500 max-w-sm text-center sm:text-right leading-relaxed">
+            <p className="text-xs text-slate-500 max-w-sm text-center sm:text-right leading-relaxed">
               {config.aboutText}
             </p>
           )}
@@ -120,7 +120,7 @@ export const SupermarketTemplate: React.FC<TemplateProps> = ({ config }) => {
                           }}
                         />
                         {!product.inStock && (
-                          <span className="absolute inset-0 bg-white/70 backdrop-blur-xxs flex items-center justify-center text-red-600 text-xxs font-black uppercase">
+                          <span className="absolute inset-0 bg-white/70 backdrop-blur-sm flex items-center justify-center text-red-600 text-xs font-black uppercase">
                             Épuisé
                           </span>
                         )}
@@ -130,7 +130,7 @@ export const SupermarketTemplate: React.FC<TemplateProps> = ({ config }) => {
                           {product.name}
                         </h3>
                         {isSuper && rf.weightGrams && (
-                          <p className="text-xxs text-slate-400 font-semibold mt-0.5">
+                          <p className="text-xs text-slate-400 font-semibold mt-0.5">
                             ⚖️ {rf.weightGrams}g
                           </p>
                         )}
@@ -173,7 +173,9 @@ export const SupermarketTemplate: React.FC<TemplateProps> = ({ config }) => {
               </div>
             )}
             <div>
-              <h2 className="text-xl font-black text-slate-950 text-center">{selectedProduct.name}</h2>
+              <h2 className="text-xl font-black text-slate-950 text-center">
+                {selectedProduct.name}
+              </h2>
               <p className="text-base font-bold text-[var(--color-primary)] text-center mt-1">
                 {formatPriceXAF(selectedProduct.priceXAF)}
               </p>

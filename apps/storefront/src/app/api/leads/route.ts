@@ -53,9 +53,6 @@ export async function POST(request: Request) {
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : "Unknown error";
     console.error("Failed to process lead creation request", err);
-    return NextResponse.json(
-      { error: "Erreur interne du serveur", message },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Erreur interne du serveur", message }, { status: 500 });
   }
 }

@@ -98,11 +98,11 @@ export const PharmacyTemplate: React.FC<TemplateProps> = ({ config }) => {
                   <div className="flex-1 min-w-0 flex flex-col justify-between">
                     <div>
                       <div className="flex items-center gap-1.5 flex-wrap">
-                        <span className="text-xxs font-bold text-[var(--color-primary)] uppercase bg-emerald-50 px-1.5 py-0.5 rounded">
+                        <span className="text-xs font-bold text-[var(--color-primary)] uppercase bg-emerald-50 px-1.5 py-0.5 rounded">
                           {product.category}
                         </span>
                         {isPharma && rf.requiresPrescription && (
-                          <span className="text-xxs font-bold text-red-600 uppercase bg-red-50 px-1.5 py-0.5 rounded">
+                          <span className="text-xs font-bold text-red-600 uppercase bg-red-50 px-1.5 py-0.5 rounded">
                             Ordonnance
                           </span>
                         )}

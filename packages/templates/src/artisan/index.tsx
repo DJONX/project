@@ -99,14 +99,14 @@ export const ArtisanTemplate: React.FC<TemplateProps> = ({ config }) => {
                       }}
                     />
                     {isArt && rf.productionTimeDays && (
-                      <span className="absolute bottom-4 left-4 bg-stone-900/80 backdrop-blur text-white text-xxs font-bold px-3 py-1 rounded">
+                      <span className="absolute bottom-4 left-4 bg-stone-900/80 backdrop-blur text-white text-xs font-bold px-3 py-1 rounded">
                         ⌛ {rf.productionTimeDays} jours de fabrication
                       </span>
                     )}
                   </div>
                   <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
                     <div>
-                      <span className="text-xxs uppercase tracking-wider font-extrabold text-stone-400">
+                      <span className="text-xs uppercase tracking-wider font-extrabold text-stone-400">
                         {product.category}
                       </span>
                       <h3 className="font-extrabold text-stone-900 text-lg mt-1">{product.name}</h3>
@@ -154,7 +154,9 @@ export const ArtisanTemplate: React.FC<TemplateProps> = ({ config }) => {
               <p className="text-lg font-bold text-[var(--color-primary)] mt-1">
                 {formatPriceXAF(selectedProduct.priceXAF)}
               </p>
-              <p className="text-sm text-stone-600 mt-2 font-serif">{selectedProduct.description}</p>
+              <p className="text-sm text-stone-600 mt-2 font-serif">
+                {selectedProduct.description}
+              </p>
 
               {/* Artisan specs */}
               {selectedProduct.sectorSpecificFields &&

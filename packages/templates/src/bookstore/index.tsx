@@ -121,14 +121,14 @@ export const BookstoreTemplate: React.FC<TemplateProps> = ({ config }) => {
                         />
                       </div>
                       <div>
-                        <span className="text-xxs uppercase tracking-wider font-extrabold text-stone-400">
+                        <span className="text-xs uppercase tracking-wider font-extrabold text-stone-400">
                           {product.category}
                         </span>
                         <h3 className="font-bold text-stone-900 text-xs line-clamp-2 mt-0.5">
                           {product.name}
                         </h3>
                         {isBook && rf.author && (
-                          <p className="text-xxs text-stone-500 italic mt-0.5 truncate">
+                          <p className="text-xs text-stone-500 italic mt-0.5 truncate">
                             Par {rf.author}
                           </p>
                         )}
@@ -171,7 +171,9 @@ export const BookstoreTemplate: React.FC<TemplateProps> = ({ config }) => {
               </div>
             )}
             <div>
-              <h2 className="text-2xl font-black text-stone-950 text-center">{selectedProduct.name}</h2>
+              <h2 className="text-2xl font-black text-stone-950 text-center">
+                {selectedProduct.name}
+              </h2>
               <p className="text-lg font-bold text-[var(--color-primary)] text-center mt-1">
                 {formatPriceXAF(selectedProduct.priceXAF)}
               </p>
