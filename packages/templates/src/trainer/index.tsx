@@ -79,7 +79,7 @@ export const TrainerTemplate: React.FC<TemplateProps> = ({ config }) => {
                   className="bg-white rounded-xl p-5 border border-sky-100 hover:border-[var(--color-primary)] shadow-sm hover:shadow-md transition-all cursor-pointer flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4"
                 >
                   <div className="space-y-2 flex-1">
-                    <div className="flex items-center gap-2 flex-wrap text-xxs font-bold uppercase">
+                    <div className="flex items-center gap-2 flex-wrap text-xs font-bold uppercase">
                       <span className="text-[var(--color-primary)] bg-sky-50 px-2 py-0.5 rounded">
                         {product.category}
                       </span>

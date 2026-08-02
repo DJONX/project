@@ -7,8 +7,9 @@
     "build": "pnpm -r build",
     "test": "vitest run",
     "test:watch": "vitest",
-    "lint": "eslint . --max-warnings 0 && node scripts/verify-imports.mjs",
+    "lint": "eslint . --max-warnings 0 && node scripts/verify-imports.mjs && node scripts/verify-tailwind.mjs",
     "verify-imports": "node scripts/verify-imports.mjs",
+    "verify-tailwind": "node scripts/verify-tailwind.mjs",
     "typecheck": "pnpm -r typecheck",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,md}\""
   },

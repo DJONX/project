@@ -37,7 +37,8 @@ export const mockMerchants: MerchantConfig[] = [
       accent: "#f59e0b", // amber-500
     },
     tagline: "Prêt-à-porter & Accessoires haut de gamme à Douala",
-    aboutText: "Votre destination mode ultime pour des styles uniques et élégants adaptés à toutes les occasions.",
+    aboutText:
+      "Votre destination mode ultime pour des styles uniques et élégants adaptés à toutes les occasions.",
     verifiedBadge: true,
     isActive: true,
     createdAt: "2026-08-01T12:00:00Z",
@@ -47,7 +48,8 @@ export const mockMerchants: MerchantConfig[] = [
         id: "a1a1a1a1-1111-2222-3333-444444444444",
         name: "Robe d'été Fleurie",
         priceXAF: 25000,
-        description: "Robe longue fluide avec motifs floraux, idéale pour les journées ensoleillées.",
+        description:
+          "Robe longue fluide avec motifs floraux, idéale pour les journées ensoleillées.",
         photoUrls: [
           "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500",
           "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=500",
@@ -93,7 +95,8 @@ export const mockMerchants: MerchantConfig[] = [
       accent: "#16a34a", // green-600
     },
     tagline: "Les meilleures spécialités camerounaises à Yaoundé",
-    aboutText: "Cuisine authentique, épices sélectionnées, plats généreux faits maison pour toute la famille.",
+    aboutText:
+      "Cuisine authentique, épices sélectionnées, plats généreux faits maison pour toute la famille.",
     verifiedBadge: true,
     isActive: true,
     createdAt: "2026-08-01T12:00:00Z",
@@ -211,7 +214,8 @@ export const mockMerchants: MerchantConfig[] = [
         id: "a1a1a1a1-5555-3333-4444-444444444444",
         name: "Smartphone Pro Max",
         priceXAF: 450000,
-        description: "Écran AMOLED, triple capteur photo, performances extrêmes et autonomie géante.",
+        description:
+          "Écran AMOLED, triple capteur photo, performances extrêmes et autonomie géante.",
         photoUrls: ["https://images.unsplash.com/photo-1498049794561-7780e7231661?w=500"],
         category: "Téléphonie",
         inStock: true,
@@ -241,7 +245,8 @@ export const mockMerchants: MerchantConfig[] = [
       accent: "#0ea5e9", // sky-500
     },
     tagline: "Votre partenaire immobilier de confiance au Cameroun",
-    aboutText: "Agence immobilière de standing spécialisée dans la location et vente de propriétés exclusives.",
+    aboutText:
+      "Agence immobilière de standing spécialisée dans la location et vente de propriétés exclusives.",
     verifiedBadge: true,
     isActive: true,
     createdAt: "2026-08-01T12:00:00Z",
@@ -278,7 +283,8 @@ export const mockMerchants: MerchantConfig[] = [
       accent: "#d97706", // amber-600
     },
     tagline: "Poterie et céramique artisanale d'exception",
-    aboutText: "Chaque pièce est unique, façonnée à la main à l'aide de techniques traditionnelles ancestrales.",
+    aboutText:
+      "Chaque pièce est unique, façonnée à la main à l'aide de techniques traditionnelles ancestrales.",
     verifiedBadge: true,
     isActive: true,
     createdAt: "2026-08-01T12:00:00Z",
@@ -314,7 +320,8 @@ export const mockMerchants: MerchantConfig[] = [
       accent: "#0ea5e9", // sky-500
     },
     tagline: "Propulsez votre carrière avec le code et la technologie",
-    aboutText: "Formations certifiantes en développement web, assurées par des experts de l'industrie numérique.",
+    aboutText:
+      "Formations certifiantes en développement web, assurées par des experts de l'industrie numérique.",
     verifiedBadge: true,
     isActive: true,
     createdAt: "2026-08-01T12:00:00Z",
@@ -324,7 +331,8 @@ export const mockMerchants: MerchantConfig[] = [
         id: "a1a1a1a1-8888-3333-4444-444444444444",
         name: "Formation React & Next.js",
         priceXAF: 150000,
-        description: "Maîtrisez le développement d'applications modernes de A à Z avec les meilleurs frameworks.",
+        description:
+          "Maîtrisez le développement d'applications modernes de A à Z avec les meilleurs frameworks.",
         photoUrls: ["https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500"],
         category: "Web Dev",
         inStock: true,
@@ -387,7 +395,8 @@ export const mockMerchants: MerchantConfig[] = [
       accent: "#f59e0b",
     },
     tagline: "Vos courses du quotidien livrées chez vous en un temps record",
-    aboutText: "Supermarché express en ligne, produits frais, conserves, entretien à prix discount.",
+    aboutText:
+      "Supermarché express en ligne, produits frais, conserves, entretien à prix discount.",
     verifiedBadge: true,
     isActive: true,
     createdAt: "2026-08-01T12:00:00Z",

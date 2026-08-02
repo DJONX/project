@@ -271,7 +271,10 @@ export const BoutiqueTemplate: React.FC<TemplateProps> = ({ config }) => {
                           <span className="font-bold text-gray-500">Tailles:</span>
                           <div className="flex gap-1">
                             {selectedProduct.sectorSpecificFields.sizes.map((s) => (
-                              <span key={s} className="px-2 py-1 bg-gray-100 text-xs rounded font-medium">
+                              <span
+                                key={s}
+                                className="px-2 py-1 bg-gray-100 text-xs rounded font-medium"
+                              >
                                 {s}
                               </span>
                             ))}
@@ -283,7 +286,10 @@ export const BoutiqueTemplate: React.FC<TemplateProps> = ({ config }) => {
                           <span className="font-bold text-gray-500">Couleurs:</span>
                           <div className="flex gap-1">
                             {selectedProduct.sectorSpecificFields.colors.map((c) => (
-                              <span key={c} className="px-2 py-1 bg-gray-100 text-xs rounded font-medium">
+                              <span
+                                key={c}
+                                className="px-2 py-1 bg-gray-100 text-xs rounded font-medium"
+                              >
                                 {c}
                               </span>
                             ))}

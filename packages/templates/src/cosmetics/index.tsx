@@ -104,7 +104,9 @@ export const CosmeticsTemplate: React.FC<TemplateProps> = ({ config }) => {
                   </div>
                   <div className="p-4 flex-1 flex flex-col justify-between space-y-2">
                     <div>
-                      <h3 className="font-bold text-gray-900 text-sm line-clamp-1">{product.name}</h3>
+                      <h3 className="font-bold text-gray-900 text-sm line-clamp-1">
+                        {product.name}
+                      </h3>
                       {isCos && rf.volumeMl && (
                         <p className="text-xs text-gray-400 mt-0.5">{rf.volumeMl} ml</p>
                       )}
@@ -143,7 +145,9 @@ export const CosmeticsTemplate: React.FC<TemplateProps> = ({ config }) => {
               </div>
             )}
             <div>
-              <h2 className="text-2xl font-black text-gray-950 font-serif">{selectedProduct.name}</h2>
+              <h2 className="text-2xl font-black text-gray-950 font-serif">
+                {selectedProduct.name}
+              </h2>
               <p className="text-lg font-bold text-[var(--color-primary)] mt-1">
                 {formatPriceXAF(selectedProduct.priceXAF)}
               </p>
