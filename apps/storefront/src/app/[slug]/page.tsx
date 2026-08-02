@@ -1,10 +1,34 @@
 import React from "react";
 import { getMerchantBySlug } from "../../lib/mock-data";
-import { BoutiqueTemplate } from "@cameroon-merchants/templates";
+import {
+  BoutiqueTemplate,
+  RestaurantTemplate,
+  CosmeticsTemplate,
+  PharmacyTemplate,
+  ElectronicsTemplate,
+  RealEstateTemplate,
+  ArtisanTemplate,
+  TrainerTemplate,
+  BookstoreTemplate,
+  SupermarketTemplate,
+} from "@cameroon-merchants/templates";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
+
+const templateMap = {
+  "Boutique de vêtements": BoutiqueTemplate,
+  "Restaurant / food": RestaurantTemplate,
+  "Cosmétiques & beauté": CosmeticsTemplate,
+  "Pharmacie / santé": PharmacyTemplate,
+  "Électronique": ElectronicsTemplate,
+  "Immobilier": RealEstateTemplate,
+  "Artisan / fait-main": ArtisanTemplate,
+  "Formateur / cours & coaching": TrainerTemplate,
+  "Librairie / papeterie": BookstoreTemplate,
+  "Supermarché / épicerie": SupermarketTemplate,
+};
 
 export default async function Page({ params }: PageProps) {
   const { slug } = await params;
@@ -30,15 +54,17 @@ export default async function Page({ params }: PageProps) {
     );
   }
 
-  if (merchant.sector === "Boutique de vêtements") {
-    return <BoutiqueTemplate config={merchant} />;
+  const SelectedTemplate = templateMap[merchant.sector];
+
+  if (SelectedTemplate) {
+    return <SelectedTemplate config={merchant} />;
   }
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-6 text-center">
       <div className="max-w-md w-full bg-white p-8 rounded-3xl border border-gray-100 shadow-xl">
         <h1 className="text-2xl font-black text-gray-950 mb-2">Secteur non supporté</h1>
-        <p className="text-gray-500">Ce secteur n'est pas encore disponible.</p>
+        <p className="text-gray-500">Ce secteur d'activité n'est pas encore configuré.</p>
       </div>
     </div>
   );
